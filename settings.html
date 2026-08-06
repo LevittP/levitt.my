@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+Levitt Settings
+</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+<h1>
+Settings
+</h1>
+
+
+<h2>
+Themes
+</h2>
+
+
+<button onclick="setTheme('dark')">
+Dark
+</button>
+
+
+<button onclick="setTheme('blue')">
+Blue
+</button>
+
+
+<button onclick="setTheme('purple')">
+Purple
+</button>
+
+
+<button onclick="setTheme('amoled')">
+AMOLED
+</button>
+
+
+
+<h2>
+Background
+</h2>
+
+
+<button onclick="background()">
+Random Wallpaper
+</button>
+
+
+
+<h2>
+Widgets
+</h2>
+
+
+<button onclick="saveLayout()">
+Save Layout
+</button>
+
+
+<br><br>
+
+
+<button onclick="back()">
+Back
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+function setTheme(theme){
+
+
+chrome.storage.sync.set({
+
+theme:theme
+
+});
+
+
+if(theme=="blue"){
+
+document.body.style.background =
+"linear-gradient(135deg,#001f3f,#0074D9)";
+
+}
+
+
+if(theme=="purple"){
+
+document.body.style.background =
+"linear-gradient(135deg,#240046,#9d4edd)";
+
+}
+
+
+if(theme=="amoled"){
+
+document.body.style.background =
+"#000";
+
+}
+
+
+if(theme=="dark"){
+
+document.body.style.background =
+"linear-gradient(135deg,#050505,#252525)";
+
+}
+
+
+}
+
+
+
+function background(){
+
+
+let image =
+"https://picsum.photos/1920/1080";
+
+
+chrome.storage.sync.set({
+
+background:image
+
+});
+
+
+document.body.style.backgroundImage =
+"url("+image+")";
+
+
+}
+
+
+
+function saveLayout(){
+
+
+chrome.storage.sync.set({
+
+saved:true
+
+});
+
+
+alert(
+"Layout saved"
+);
+
+
+}
+
+
+
+function back(){
+
+window.location.href =
+"newtab.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

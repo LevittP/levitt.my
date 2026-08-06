@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Levitt Ultimate New Tab",
+  "version": "1.0",
+  "description": "A custom futuristic Edge dashboard",
+
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+
+  "permissions": [
+    "storage"
+  ]
+}
